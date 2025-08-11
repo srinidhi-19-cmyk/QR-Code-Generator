@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.17.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qrgen"
+version = "0.1.0"
+description = "Generate scannable QR codes from links or text via a simple Python API and CLI."
+readme = "README.md"
+authors = [{ name = "Your Name" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+  "qrcode[pil]>=7.4,<8",
+  "Pillow>=10,<11",
+]
+
+[project.scripts]
+qrgen = "qrgen.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["qrgen"]
